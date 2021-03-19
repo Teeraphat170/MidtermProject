@@ -1,0 +1,38 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<div class="col-md-12" >
+  <div class="touch" >
+    <div class="card text-left" style="border:solid;">
+      <div class="card-body" >
+        <h5 class="text-center"> ItemUpcoming</h5>
+        <div class="row">
+          {% for i in r %}
+          <div class="col-md-4 mt-3" >
+            <div class="card" >
+                {% if i.source == None %}
+                  <div class="col-md-12">
+                    <p>Images not exist</p>
+                 </div>
+                {% else %}
+                  <img class="card-img-top" src="{{i.source}}" alt="It Wasn't Me" style="background-color: rgb(0, 0, 0);">
+                {% endif %}
+              <div class="col-md-12" style="color: rgb(0, 0, 0);">
+                <br>
+                <p style="text-align: left;">Item Information</p>
+                <p>&bull;&nbsp;&nbsp;Name : {{i.name}}</p>
+                <p>&bull;&nbsp;&nbsp;Rarity : {{i.rarity}}</p>
+                <p>&bull;&nbsp;&nbsp;Types : {{i.types}}</p>
+                <p>&bull;&nbsp;&nbsp;ItemSet : {{i.setName}}</p>
+                <p>&bull;&nbsp;&nbsp;Description : {{i.description}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+{% endblock %}

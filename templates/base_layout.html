@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bai+Jamjuree:ital,wght@1,700&family=Londrina+Solid:wght@100;400&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!--font-family: 'Bai Jamjuree', sans-serif; ใส่ที่ body-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bai+Jamjuree:ital,wght@1,700&family=Londrina+Solid:wght@100;400&display=swap');
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        padding: 0;
+        margin: 0 0 100px;
+        
+        background: url("/static/images/q.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* card */
+    .touch {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .touch .card {
+        border: none;
+        border-radius: 1rem;
+    }
+
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        
+        width: 100%;
+       
+    }
+</style>
+
+<body>
+
+    {% include 'includes/_navbar.html' %}
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    {% include 'includes/_footer.html' %}
+
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js">
+    </script>
+</body>
+
+</html>

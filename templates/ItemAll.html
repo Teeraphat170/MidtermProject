@@ -1,0 +1,51 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<br>
+<div class="row">
+  <!--<div class="col-md-1" ></div>-->
+    <div class="col-md-12" >
+      <div class="" >
+        <div class="card text-left" style="border:solid;">
+          <div class="card-body" >
+            <div class="row">
+              <div class="col-sm-6 py-2 ">
+                  <h1 class="text-left"> ItemSeach</h1>
+                  <h4 class="text-left"> Currently Search : {{word}}</h4>
+              </div>
+              <div class="col-sm-6 py-2 ">
+                  <form>
+                      <input type="text" name="word" id="user_input" class="form-control" />
+                      <button type="submit"  class="btn btn-primary">ค้นหา</button>
+                  </form>
+                      
+              </div>
+              <!--<div class="col-sm-4 py-2 ">
+                    
+              </div>-->
+            </div>
+                  
+            <div class="row">
+                {% for i in r %}
+                    <div class="col-md-4 mt-3" >
+                        <div class="card" >
+                            <img class=" " src="{{i.images['icon']}}" alt="It Wasn't Me" style="border:solid;background-color: black;">
+                              <div class="col-md-12" style="border-right:solid;border-bottom:solid;border-left:solid;">
+                                <br>
+                                <p style="text-align: left;">Item Information</p>
+                                <p>&bull;&nbsp;&nbsp;Name : {{i['name']}}</p>
+                                <p>&bull;&nbsp;&nbsp;Rarity : {{i.rarity}}</p>
+                                <p>&bull;&nbsp;&nbsp;Types : {{i.type}}</p>
+                                <p>&bull;&nbsp;&nbsp;Description : {{i.description}}</p>
+                              </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 
+{% endblock %}

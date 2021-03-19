@@ -1,0 +1,106 @@
+Itemshop
+import requests
+x = "https://fortnite4.p.rapidapi.com/shop/"
+
+headers = {
+    'x-rapidapi-key': "2f1d86743cmsh52d40650f031311p1970a1jsnda065acdb86b",
+    'x-rapidapi-host': "fortnite4.p.rapidapi.com"
+}
+url = requests.request("GET", x, headers=headers)
+r = url.json()
+show = []
+for x in range(5) :
+    name =  r['data'][x]['item']['name']
+    rarity =  r['data'][x]['item']['rarity']
+    types =  r['data'][x]['item']['type']
+    img =   r['data'][x]['item']['images']['fbackground']
+    show.append({"name":name,"rarity":rarity,"types":types,"img":img})
+print(show)
+
+News
+import requests
+
+url = "https://fortnite4.p.rapidapi.com/news"
+
+headers = {
+    'x-rapidapi-key': "2f1d86743cmsh52d40650f031311p1970a1jsnda065acdb86b",
+    'x-rapidapi-host': "fortnite4.p.rapidapi.com"
+    }
+
+url = requests.request("GET", url, headers=headers)
+q = url.json()
+show = []
+for z in range(len(q)) :
+    img =  q['data'][z]['image']
+    title =  q['data'][z]['title']
+    body =  q['data'][z]['body']
+    platform =   q['data'][z]['platform']
+    show.append({"img":img,"title":title,"body":body,"platform":platform})
+print(show)
+
+ItemUpcoming
+@app.route('/Item (Upcoming)')
+def ItemUpcoming():
+    r= ItemUpcomings()
+    return render_template("ItemUpcoming.html", r=r)
+
+def ItemUpcomings():
+    url = "https://fortnite4.p.rapidapi.com/items/upcoming"
+
+    headers = {
+        'x-rapidapi-key': "2f1d86743cmsh52d40650f031311p1970a1jsnda065acdb86b",
+        'x-rapidapi-host': "fortnite4.p.rapidapi.com"
+        }
+    url = requests.request("GET", url, headers=headers)
+    w = url.json()
+    show = []
+    for x in range(50) :
+        name =  w['data'][x]['item']['name']
+        description = w['data'][x]['item']['description']
+        rarity = w['data'][x]['item']['rarity']
+        types = w['data'][x]['item']['type']
+        source = w['data'][x]['item']['images']['icon']
+        show.append({"name":name,"description":description,"rarity":rarity,"types":types,"source":source})
+    return show
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar navbar-inverse navbar-fixed-top">
+  <!-- Container wrapper -->
+  <div class="Container">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarCenteredExample"
+      aria-controls="navbarCenteredExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCenteredExample"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse justify-content-left container-fluid-nav"
+      id="navbarCenteredExample"
+    >
+      <!-- Left links -->
+      <ul class="navbar-nav  text-center">
+        <a class="navbar-brand" href="#" style="color: aliceblue;" ><h4>Fortnite</h4></a>
+          <a class="nav-link " href="/" style="color: aliceblue;" ><h7 >News</h7></a>
+          <a class="nav-link" href="/ItemShop" style="color: aliceblue;"><h7>ItemShop</h7></a>
+          <a class="nav-link" href="/Item (Upcoming)" style="color: aliceblue;"><h7>Items (Upcoming)</h7></a>
+          <a class="nav-link" href="/ItemAll" style="color: aliceblue;"><h7>ItemAll</h7></a>
+          <a class="nav-link" href="/about" style="color: aliceblue;"><h7>About</h7></a>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+</body>
+
