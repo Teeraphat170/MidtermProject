@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,Blueprint
 from urllib.parse import quote
 from urllib.request import urlopen
 from flask_sqlalchemy import SQLAlchemy

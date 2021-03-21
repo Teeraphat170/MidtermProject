@@ -10,9 +10,9 @@ import os
 ItemShop = Blueprint('ItemShop', __name__)
 
 headers = {
-    'x-rapidapi-key': "68bb9b9c83msheb24ac34402b1e6p125c80jsn234cce83f901",
-    'x-rapidapi-host': "fortnite4.p.rapidapi.com"
-}
+        'x-rapidapi-key': "f5190a5977mshf4f4bd75f0232f4p1bd172jsn05e6db837ac3",
+        'x-rapidapi-host': "fortnite4.p.rapidapi.com"
+    }
 @ItemShop.route("/ItemShop")
 def home():
     r= Item()
@@ -21,10 +21,6 @@ def home():
 def Item(): #ItemShop
     url = "https://fortnite4.p.rapidapi.com/shop/"
 
-    headers = {
-        'x-rapidapi-key': "f5190a5977mshf4f4bd75f0232f4p1bd172jsn05e6db837ac3",
-        'x-rapidapi-host': "fortnite4.p.rapidapi.com"
-    }
     url = requests.request("GET", url, headers=headers)
     r = url.json()
     show = []
