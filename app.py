@@ -5,10 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 import requests
 import urllib.parse
 from models import db, Members
-from ItemShop import ItemShop
-from news import news
-from ItemUpcoming import ItemUpcoming
-from ItemAll import ItemAll
+from Blueprint.ItemShop import ItemShop
+from Blueprint.news import news
+from Blueprint.ItemUpcoming import ItemUpcoming
+from Blueprint.ItemAll import ItemAll
 from about import about
 
 app = Flask(__name__)
